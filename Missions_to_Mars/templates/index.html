@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>All Things Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Page</a></p>
+    </div>
+    <h2><strong>Latest Mars News</strong></h2>
+    <h3><strong>{{ mars_output.news_title}}</strong></h3>
+    <h4>{{ mars_output.news_p }}</h4>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <h2><strong>Featured Mars Image</strong></h2>
+        <img src= {{mars_output.featured_image_url}} class="img-responsive" alt="Responsive image">
+      </div>
+      <div class="col-md-4">
+        <h2><strong>Current Weather on Mars</strong></h2>
+        <div class="col-md-12">
+          {{ mars_output.mars_weather }}
+        </div>
+        <h2><strong>Mars Facts</strong></h2>
+        <table class="table">
+          {{table|safe}} 
+        </table>
+      </div>
+    </div>
+    
+    <div class="row">
+      <h2><strong>Mars Hemispheres</strong></h2>
+        <div class="col-md-6">
+            <img src= {{mars_output.valles_marineris_hemisphere_url}} class="img" width="450 px">
+            <h3><strong>Valles Marineris Hemisphere Enhanced</strong></h3>
+          </div>
+        <div class="col-md-6">
+            <img src= {{mars_output.cerberus_hemisphere_url}} class="img" width="450 px">
+            <h3><strong>Cerberus Hemisphere Enhanced</strong></h3>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img src= {{mars_output.schiaparelli_hemisphere_url}} class="img" width="450 px">
+            <h3><strong>Schiaparelli Hemisphere Enhanced</strong></h3>
+          </div>
+        <div class="col-md-6">
+            <img src= {{mars_output.syrtis_major_hemisphere_url}} class="img" width="450 px">
+            <h3><strong>Syrtis Major Hemisphere Enhanced</strong></h3>
+          </div>
+    </div>
+  </div>
+</body>
+
+</html>
